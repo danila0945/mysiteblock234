@@ -1,72 +1,194 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Nike Sneakers Gallery</title>
-        <meta name="description" content="Блочная верстка HTML5 о кроссовках Nike">
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f0f0f0;
-            }
-            #header {
-                text-align: center;
-                padding: 20px; 
-                background-color: rgb(255, 165, 0);
-                color: white;
-            }
-            #nav {
-                background-color: rgb(255, 165, 0);
-                border-top: 1px solid #888;
-                border-bottom: 1px solid #888;
-            }
-            #nav ul {
-                padding: 0;
-                list-style: none;
-                text-align: center;
-            }
-            #nav li {
-                display: inline;
-            }
-            #nav a {
-                color: black;
-                padding: 10px 25px;
-                text-decoration: none;
-                font-size: large;
-            }
-            #wrapper {
-                min-height: 500px;
-                background-image: url(https://cdn.pixabay.com/photo/2017/05/21/16/43/nike-2327206_1280.jpg);
-                background-size: cover;  
-                padding: 20px;
-            }
-            #footer {
-                background-color: #ccc;
-                text-align: center;
-                padding: 15px;
-                clear: both;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="header">
-            <h1>Nike Sneaker Gallery</h1>
-        </div>
-        <div id="nav">
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин кроссовок Nike</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Верхняя навигация */
+        nav.top-nav {
+            background-color: #111;
+            color: white;
+            padding: 10px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        nav.top-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav.top-nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav.top-nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        nav.top-nav ul li a:hover {
+            color: #f7b733;
+        }
+
+        header {
+            background-color: #111;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px; /* Отступ для навигации */
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
+            grid-gap: 10px;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        main {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        aside {
+            background-color: #f1f1f1;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .product {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .product-item {
+            text-align: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product-item h3 {
+            margin: 0;
+        }
+
+        .product-item p {
+            margin: 5px 0;
+        }
+
+        .product-item .price {
+            color: #f7b733;
+            font-weight: bold;
+        }
+
+        .product-item button {
+            padding: 10px;
+            background-color: #111;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-item button:hover {
+            background-color: #f7b733;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Верхняя навигация -->
+    <nav class="top-nav">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="about.html">О нас</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Добро пожаловать в магазин кроссовок Nike</h1>
+        <p>Выберите свои идеальные кроссовки!</p>
+    </header>
+
+    <div class="container">
+        <aside>
+            <h3>Популярные модели</h3>
             <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="gallery.html">Галерея</a></li>
-                <li><a href="about.html">О Nike</a></li>
+                <li><a href="#">Nike Air Max 270</a></li>
+                <li><a href="#">Nike React Infinity Run</a></li>
+                <li><a href="#">Nike ZoomX Vaporfly Next%</a></li>
             </ul>
-        </div>
-        <div id="wrapper">
-            <h2>Добро пожаловать в галерею кроссовок Nike!</h2>
-            <p>Здесь вы найдете последние модели и коллекции.</p>
-            <p>Следите за обновлениями и акциями на нашем сайте.</p>
-        </div>
-        <div id="footer">
-            <p>© 2023 Nike Gallery. Все права защищены.</p>
-        </div>
-    </body>
+        </aside>
+
+        <main>
+            <h2>Новинки 2024 года</h2>
+            <div class="product">
+                <div class="product-item">
+                    <img src="nike_air_max_270.jpg" alt="Nike Air Max 270">
+                    <h3>Nike Air Max 270</h3>
+                    <p class="price">9 990 руб.</p>
+                    <button>Добавить в корзину</button>
+                </div>
+                <div class="product-item">
+                    <img src="nike_react_infinity_run.jpg" alt="Nike React Infinity Run">
+                    <h3>Nike React Infinity Run</h3>
+                    <p class="price">10 990 руб.</p>
+                    <button>Добавить в корзину</button>
+                </div>
+                <div class="product-item">
+                    <img src="nike_zoomx_vaporfly.jpg" alt="Nike ZoomX Vaporfly Next%">
+                    <h3>Nike ZoomX Vaporfly Next%</h3>
+                    <p class="price">19 990 руб.</p>
+                    <button>Добавить в корзину</button>
+                </div>
+            </div>
+        </main>
+
+        <aside>
+            <h3>Новости и акции</h3>
+            <p>Скидки до 15% на новые коллекции!</p>
+        </aside>
+    </div>
+
+    <footer>
+        <p>© 2024 Магазин кроссовок Nike. Все права защищены.</p>
+    </footer>
+
+</body>
 </html>
